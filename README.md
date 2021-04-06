@@ -1,1 +1,1 @@
-# hangman
+Gra polega na zgadywaniu slowa,kazdy gracz na 9(ta liczba wziela mi sie z tego ze policzylem ile jest "patykow" zeby ulozyc calego wisielca) szans na zgadnecie losowego slowa z pliku ktory rowniez załączam
