@@ -12,14 +12,14 @@ chances = 9
 game = True
 
 
-# dodawnanie liter do tablicy hasla
+# Adding letter to the password table
 for el in password:
     password_letters.append(el)
 
 
 def menu():
-    print("1.Rozpocznij gre")
-    print("2.Wyjsc z gry")
+    print("1.Start game")
+    print("2.Exit")
 
 
 def password_display():
@@ -34,40 +34,40 @@ def password_display():
                 print("_", end=" ")
         print()
         choice = input("Letter:").lower()
-        if len(choice) == 1: # dlugosc wpisanej litery nie moze byc wieksza niz 1
-            if choice not in guessed_letters: # nie mozna zgadywac dwa razy tej samej litery
+        if len(choice) == 1: # lenght of word cannot be less than one
+            if choice not in guessed_letters: # you cannot guess the same letter twice
                 guessed_letters.append(choice)
                 if choice in password:
-                    print(f"Odgadnieto literke {choice}!")
+                    print(f"You guessed letter {choice}!")
                     password_letters.remove(choice)
                     if not password_letters:
-                        print("Odgadles haslo!")
+                        print("You guessed password!")
                         game = False
                         break
 
                 else:
-                    print("Nie odgadnieto")
+                    print("Don't guessed")
                     chances -= 1
                     if chances == 0:
                         game = False
             else:
-                print("Ta literke juz podales!")
+                print("You have already given this letter!")
         else:
-            print("Wpisz tylko jedna litere!")
+            print("Please enter only one letter!")
 
 
 def main():
     global game
     while game:
         menu()
-        choice = input("Wybor:")
+        choice = input("Choice:")
         if choice == '1':
             password_display()
         if choice == '2':
             game = False
-            print("Do zobaczenia!")
+            print("See you!")
         else:
-            print("Zly wybor")
+            print("Wrong choice")
             print('\n' * 10)
 
 
