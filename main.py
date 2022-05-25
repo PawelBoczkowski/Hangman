@@ -1,7 +1,7 @@
 import random
 
 
-with open("slowa.txt", "r") as file:
+with open("words.txt", "r") as file:
     lines = file.read().splitlines()
 
 
